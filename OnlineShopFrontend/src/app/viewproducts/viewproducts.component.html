@@ -1,0 +1,29 @@
+<div class="container p-2">
+    <div class="row p-2">
+      <div class="card col-lg-4 p-1" *ngFor="let item of productData">
+        <div class="product-card">
+          <small>{{item.productId}}</small>
+          <h3 class="text-center">{{ item.productName }}</h3>
+          <h4>{{ item.productBrand }}</h4>
+          <h4>{{ item.productType }}</h4>
+          <div class="row">
+            <div class="col-6 text-danger">
+              <h5>{{ item.productPrice }}</h5>
+            </div>
+            <div class="col-6 text-success fw-5">
+              <h5>{{ item.productDiscountedPrice }}</h5>
+            </div>
+          </div>
+          <div class="col-12 d-flex">
+            <div class="col-6">
+              <button class="btn btn-outline-danger" (click)="removeProduct(item.productId)">Delete</button>  
+            </div>
+            <div class="col-6">
+              <button class="btn btn-warning" (click)="editProduct(item.productId)">Update</button>  
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
