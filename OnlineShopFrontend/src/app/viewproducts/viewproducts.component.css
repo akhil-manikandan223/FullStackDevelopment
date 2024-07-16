@@ -1,0 +1,11 @@
+.container{
+    padding: 3%;
+}
+.card{
+    border: solid 1px #ccc;
+    border-radius: 5px;
+    
+}
+.product-card{
+    padding: 2%;
+}

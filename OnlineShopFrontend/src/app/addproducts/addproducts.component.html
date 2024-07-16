@@ -1,0 +1,53 @@
+<div class="container w-50 mt-5">
+    <h1 class="text-center mb-4">Add Products Here</h1>
+    <form [formGroup]="addProductsForm" (ngSubmit)="postProducts()">
+        <div class="form-group">
+          <label for="productName">Name</label>
+          <input class="form-control" type="text" formControlName="productName" id="productName" placeholder="enter the name" required>
+          <div class="err-msg" *ngIf="addProductsForm.get('productName')?.invalid && (addProductsForm.get('productName')?.dirty || addProductsForm.get('productName')?.touched)">
+              <div class="text-danger" *ngIf="addProductsForm.get('productName')?.errors?.['required']">
+                  Product Name is required
+              </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="productBrand">Brand</label>
+          <input class="form-control" type="text" formControlName="productBrand" id="productBrand" placeholder="enter the brand name" required>
+          <div class="err-msg" *ngIf="addProductsForm.get('productBrand')?.invalid && (addProductsForm.get('productBrand')?.dirty || addProductsForm.get('productBrand')?.touched)">
+              <div class="text-danger" *ngIf="addProductsForm.get('productBrand')?.errors?.['required']">
+                  Product Brand Name is required
+              </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="productType">Type</label>
+          <input class="form-control" type="text" formControlName="productType" id="productType" placeholder="enter the type" required>
+          <div class="err-msg" *ngIf="addProductsForm.get('productType')?.invalid && (addProductsForm.get('productType')?.dirty || addProductsForm.get('productType')?.touched)">
+              <div class="text-danger" *ngIf="addProductsForm.get('productType')?.errors?.['required']">
+                  Product Brand type is required
+              </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="productPrice">Price</label>
+          <input class="form-control" type="number" formControlName="productPrice" id="productPrice" placeholder="enter the price" required>
+          <div class="err-msg" *ngIf="addProductsForm.get('productPrice')?.invalid && (addProductsForm.get('productPrice')?.dirty || addProductsForm.get('productPrice')?.touched)">
+              <div class="text-danger" *ngIf="addProductsForm.get('productPrice')?.errors?.['required']">
+                  Product price is required
+              </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="productDiscountedPrice">Discount Price</label>
+          <input class="form-control" type="number" formControlName="productDiscountedPrice" id="productDiscountedPrice" placeholder="enter the discount price" required>
+          <div class="err-msg" *ngIf="addProductsForm.get('productDiscountedPrice')?.invalid && (addProductsForm.get('productDiscountedPrice')?.dirty || addProductsForm.get('productDiscountedPrice')?.touched)">
+              <div class="text-danger" *ngIf="addProductsForm.get('productDiscountedPrice')?.errors?.['required']">
+                  Product discount price is required
+              </div>
+          </div>
+        </div>
+        <div class="btn-div mt-3 text-center">
+          <button class="btn btn-primary">Add Product</button>
+        </div>
+      </form>
+</div>

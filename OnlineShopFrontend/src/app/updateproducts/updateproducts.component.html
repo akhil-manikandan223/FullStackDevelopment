@@ -1,0 +1,60 @@
+<div class="container w-50 mt-5">
+    <h1 class="text-center mb-4">Update Products Here</h1>
+    <form [formGroup]="updateProductsForm" (ngSubmit)="updateProducts()">
+        <div class="form-group">
+            <label for="productId">Product Id</label>
+            <input class="form-control" type="number" formControlName="productId" id="productId" readonly>
+            <div class="err-msg" *ngIf="updateProductsForm.get('productId')?.invalid && (updateProductsForm.get('productId')?.dirty || updateProductsForm.get('productId')?.touched)">
+            </div>
+          </div>
+        <div class="form-group mt-2">
+          <label for="productName">Product Name</label>
+          <input class="form-control" type="text" formControlName="productName" id="productName" placeholder="enter the name" required>
+          <div class="err-msg" *ngIf="updateProductsForm.get('productName')?.invalid && (updateProductsForm.get('productName')?.dirty || updateProductsForm.get('productName')?.touched)">
+              <div class="text-danger" *ngIf="updateProductsForm.get('productName')?.errors?.['required']">
+                  Product Name is required
+              </div>
+          </div>
+        </div>
+        <div class="form-group mt-2">
+          <label for="productBrand">Brand Name</label>
+          <input class="form-control" type="text" formControlName="productBrand" id="productBrand" placeholder="enter the brand name" required>
+          <div class="err-msg" *ngIf="updateProductsForm.get('productBrand')?.invalid && (updateProductsForm.get('productBrand')?.dirty || updateProductsForm.get('productBrand')?.touched)">
+              <div class="text-danger" *ngIf="updateProductsForm.get('productBrand')?.errors?.['required']">
+                  Product Brand Name is required
+              </div>
+          </div>
+        </div>
+        <div class="form-group mt-2">
+          <label for="productType">Product Type</label>
+          <input class="form-control" type="text" formControlName="productType" id="productType" placeholder="enter the type" required>
+          <div class="err-msg" *ngIf="updateProductsForm.get('productType')?.invalid && (updateProductsForm.get('productType')?.dirty || updateProductsForm.get('productType')?.touched)">
+              <div class="text-danger" *ngIf="updateProductsForm.get('productType')?.errors?.['required']">
+                  Product Brand type is required
+              </div>
+          </div>
+        </div>
+        <div class="form-group mt-2">
+          <label for="productPrice">Product Price</label>
+          <input class="form-control" type="number" formControlName="productPrice" id="productPrice" placeholder="enter the price" required>
+          <div class="err-msg" *ngIf="updateProductsForm.get('productPrice')?.invalid && (updateProductsForm.get('productPrice')?.dirty || updateProductsForm.get('productPrice')?.touched)">
+              <div class="text-danger" *ngIf="updateProductsForm.get('productPrice')?.errors?.['required']">
+                  Product price is required
+              </div>
+          </div>
+        </div>
+        <div class="form-group mt-2">
+          <label for="productDiscountedPrice">Product Discount Price</label>
+          <input class="form-control" type="number" formControlName="productDiscountedPrice" id="productDiscountedPrice" placeholder="enter the discount price" required>
+          <div class="err-msg" *ngIf="updateProductsForm.get('productDiscountedPrice')?.invalid && (updateProductsForm.get('productDiscountedPrice')?.dirty || updateProductsForm.get('productDiscountedPrice')?.touched)">
+              <div class="text-danger" *ngIf="updateProductsForm.get('productDiscountedPrice')?.errors?.['required']">
+                  Product discount price is required
+              </div>
+          </div>
+        </div>
+        <div class="btn-div mt-3 text-center">
+          <button class="btn btn-primary">Update Product</button>
+        </div>
+      </form>
+</div>
+
